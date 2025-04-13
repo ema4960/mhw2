@@ -8,6 +8,23 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
+.displayNone{
+    display: none;
+}
+
+.displayBlock{
+    display: block;
+}
+
+.yellowButton{
+    
+    border-radius: 5px;
+    background-color: #f5f200;
+    font-size: 16px;
+    border: 1px solid #aaa;
+}
+
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -18,6 +35,7 @@ body{
     padding: 10px 16px;
 
     .burger{
+        display: block;
         margin: 0;
         padding: 0 0px;
 
@@ -85,31 +103,48 @@ body{
     }   
 }
 
-@media screen and (min-width: 769px){
-
-    
-    
-}
-
 @media screen and (min-width: 1100px){
-    .burger{
-        display: none;
-    }
+    
 
     .header{
+        padding-inline: 10px;
         visibility: visible;
         height: 52px;
-        justify-content:space-evenly;
+        justify-content:space-between;
         
+        .burger{
+            display: none;
+        }
     
         button{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 color: #fff;
                 background-color: #333;
                 padding: 0 4px;
                 font-size: 1em;
-                height: 41px;
+                height: 48px;
                 border-radius: 4px;
                 border: 0;
+
+                img{
+                    display: inline;
+                    height: 10px;
+                    padding: 3px;
+                    margin: 0;
+                }
+        }
+
+        .headerbtClicked{
+            color: #333;
+            background-color: #fff;
+            padding: 0 4px;
+            font-size: 1em;
+            height: 48px;
+            border-radius: 4px;
+            border: 0;
         }
 
         button:hover{
@@ -122,10 +157,10 @@ body{
         }
 
         .header_nav_left{
-            gap: 30px;
             margin-left: 1em;
+            gap: 10px;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             
             button{
@@ -170,6 +205,100 @@ body{
     }
 }
 
+    
+
+@media screen and (min-width: 1100px){
+    #loginds{
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 337px;
+        background-color: #fff;
+
+        h2{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 400;
+            color: #333;
+        } 
+
+        p{
+            margin-top:48px;
+        }
+
+        img{
+            height: 35px;
+            margin-left: 25%;
+        }
+
+        #closeLogin{
+            width: 24px;
+            height: 24px;
+            margin-left: 20%;
+            margin-bottom: 5.5px;
+        }
+
+        button{
+            width: 100%;
+            padding: 8px 16px;
+            margin-top:20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 600;
+
+            span{
+                color: #0C4F90;
+            }
+        }
+
+        div{
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+
+            #mailBt{
+                width: 100%;
+                padding: 8px 16px;
+                height: 36.8px;
+            }
+    
+            input{
+                width: 100%;
+                height: 40px;
+                margin-bottom: 4px;
+                padding: 4px 12px;
+            }
+
+            p{
+                text-align: center;
+                margin-block:15px;
+            }
+
+            .socialLogBt{
+                display: block;
+                width: 100%;
+                padding: 8px 16px;
+                border: 2px solid black;
+                border-radius: 5px;
+                background-color: #fff;
+                margin-bottom: 16px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+
+        
+    }
+}
+
 .contenuto{
     margin: 0;
 }
@@ -200,7 +329,10 @@ body{
             flex-direction: row;
             justify-content: space-between;
             gap: 15px;
-
+            button{
+                width: 33%;
+                height: 40px;
+            }
             select{
                 width: 33%;
                 height: 40px;
@@ -208,14 +340,7 @@ body{
                 font-size: 16px;
                 padding: 0 20px 0 10px;
             }
-            button{
-                width: 33%;
-                height: 40px;
-                border-radius: 5px;
-                background-color: #f5f200;
-                font-size: 16px;
-                border: 1px solid #aaa;
-            }
+            
             input[type=text]{
                 width: 33%;
                 height: 40px;
