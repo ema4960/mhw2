@@ -1,11 +1,25 @@
 
 let buttonLogin = document.querySelector("#login_button");
 buttonLogin.addEventListener("click", onClickLogin);
+let start =true;
 
 function onClickLogin(){
     let loginds = document.querySelector("#loginds");
     loginds.classList.remove("displayNone");
     loginds.classList.add("displayBlock");
+    if(start){
+        let body = document.querySelector("body");
+        let elemento = document.createElement("div");
+        elemento.setAttribute("id","shadow");
+        body.appendChild(elemento);
+        start=false;
+    }else{
+        let shadow = document.querySelector("#shadow")
+        shadow.classList.remove("displayNone");
+        shadow.classList.add("displayFixed");
+    }
+
+    
 }
 
 let closeLogin = document.querySelector("#closeLogin");
@@ -15,6 +29,9 @@ function onClickCloseLogin(){
     let loginds = document.querySelector("#loginds");
     loginds.classList.remove("displayBlock");
     loginds.classList.add("displayNone");
+    let shadow = document.querySelector("#shadow")
+    shadow.classList.remove("displayFixed");
+    shadow.classList.add("displayNone");
 }
 
 let button1 = document.querySelector("#button1");
